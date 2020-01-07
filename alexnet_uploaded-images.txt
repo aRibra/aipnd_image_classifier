@@ -1,0 +1,89 @@
+------
+[ Qs ]
+------
+1. All three archs correctly classified the dog image (otterhound).
+2. All three archs correctly classified the horizontally flipped dog image (otterhound).
+3. Yes. Animal was correctly classified (fox), but object was not for all the models.
+4. As far as the dog + animal classification, they all perform on-par. For objects also they are classified as not being 
+dogs, but all failed to output the correct object class.
+
+In terms of speed I would consider either alexnet or resnet, but in terms of accuracy will choose vgg arch.
+------------------------
+
+
+
+
+in_arg =  Namespace(arch='alexnet', dir='uploaded_images/', dogfile='dognames.txt')
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:     uploaded_images/Fox_01.jpg  label:                        fox
+ 2 key:   uploaded_images/Chess_01.jpg  label:                      chess
+ 3 key: uploaded_images/Otterhound_02.jpg  label:                 otterhound
+ 4 key: uploaded_images/Otterhound_01.jpg  label:                 otterhound
+
+     MATCH:
+
+    uploaded_images/Fox_01.jpg: 
+Real:                        fox   Classifier:         red fox, vulpes vulpes
+
+uploaded_images/Otterhound_02.jpg: 
+Real:                 otterhound   Classifier:        otterhound, otter hound
+
+uploaded_images/Otterhound_01.jpg: 
+Real:                 otterhound   Classifier:        otterhound, otter hound
+
+ NOT A MATCH:
+
+  uploaded_images/Chess_01.jpg: 
+Real:                      chess   Classifier:                         nipple
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+     MATCH:
+
+    uploaded_images/Fox_01.jpg: 
+Real:                        fox   Classifier:         red fox, vulpes vulpes  
+PetLabelDog: 0  ClassLabelDog: 0
+
+uploaded_images/Otterhound_02.jpg: 
+Real:                 otterhound   Classifier:        otterhound, otter hound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+uploaded_images/Otterhound_01.jpg: 
+Real:                 otterhound   Classifier:        otterhound, otter hound  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+  uploaded_images/Chess_01.jpg: 
+Real:                      chess   Classifier:                         nipple  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+{'n_images': 4, 'n_dogs_img': 2, 'n_notdogs_img': 2, 'n_match': 3, 'n_correct_dogs': 2, 'n_correct_notdogs': 2, 'n_correct_breed': 2, 'pct_match': 75.0, 'pct_correct_dogs': 100.0, 'pct_correct_breed': 100.0, 'pct_correct_notdogs': 100.0}
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+>> stats for arch alexnet
+	# of total imgs =  4
+	# of dog imgs =  2
+	# not a dog imgs= 2
+
+% not a dog correct= 100.0
+% dog correct= 100.0
+% breed correct= 100.0
+% match labels= 75.0
+++++++++++++++++++++++++++++++
+
+** Total Elapsed Runtime: 0:0:0

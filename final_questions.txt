@@ -1,0 +1,11 @@
+------
+[ Qs ]
+------
+1. All three archs correctly classified the dog image (otterhound).
+2. All three archs correctly classified the horizontally flipped dog image (otterhound).
+3. Yes. Animal was correctly classified (fox), but object was not for all the models.
+4. As far as the dog + animal classification, they all perform on-par. For objects also they are classified as not being 
+dogs, but all failed to output the correct object class.
+
+In terms of speed I would consider either alexnet or resnet, but in terms of accuracy will choose vgg arch.
+------------------------
