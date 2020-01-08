@@ -18,7 +18,6 @@
 ##
 # Imports python modules
 from os import listdir
-from os.path import join
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
@@ -50,12 +49,15 @@ def get_pet_labels(image_dir):
     results_dic = {}
     
     for fname in file_names:
+        if fname.startswith('.'):
+            continue
         names = fname.lower().split('_')
         label = ''
         for n in names:
-            if n[0].isalpha():
-                label += n+', '
-        label = [label.lstrip().rstrip()[:-1]]
-        results_dic[join(home_dir, fname)] = label
+            if n.isalpha():
+                label += n+' '
+        label = [label.strip()]
+        results_dic[fname] = label
     
     return results_dic
+

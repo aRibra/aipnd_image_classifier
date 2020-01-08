@@ -73,28 +73,37 @@ def adjust_results4_isadog(results_dic, dogfile):
     with open(dogfile) as f:
         for l in f:
             ds = l.strip()
-            for d in ds.split(','):
-                dog_dict[d.strip().lower()] = 1
-                dog_dict[', '.join(d.split(' ')).strip()] = 1
+            
+#             for d in ds.split(','):
+#                 dog_dict[d.strip().lower()] = 1
+#                 dog_dict[', '.join(d.split(' ')).strip()] = 1
+
             dog_dict[ds.lower()] = 1
     for key, value in results_dic.items():
         label, classifier_out, match_or_not = value
         classifier_is_dog = False
         label_is_dog = False
 
-        for l in label.split(','):
-            if dog_dict.get(l) is not None:
-                label_is_dog = True
-                break
-        if dog_dict.get(label) is not None:
+#         for l in label.split(','):
+#             if dog_dict.get(l) is not None:
+#                 label_is_dog = True
+#                 break
+#         if dog_dict.get(label) is not None:
+#             label_is_dog = True
+
+        if label in dog_dict:
             label_is_dog = True
-            
-        for l in classifier_out.split(','):
-            if dog_dict.get(l) is not None:
-                classifier_is_dog = True
-                break
+
+#         for l in classifier_out.split(','):
+#             if dog_dict.get(l) is not None:
+#                 classifier_is_dog = True
+#                 break
+
+        if classifier_out in dog_dict:
+            classifier_is_dog = True
 
         value.append(int(label_is_dog))        
         value.append(int(classifier_is_dog))
         
     return results_dic
+

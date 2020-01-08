@@ -1,18 +1,3 @@
-------
-[ Qs ]
-------
-1. All three archs correctly classified the dog image (otterhound).
-2. All three archs correctly classified the horizontally flipped dog image (otterhound).
-3. Yes. Animal was correctly classified (fox), but object was not for all the models.
-4. As far as the dog + animal classification, they all perform on-par. For objects also they are classified as not being 
-dogs, but all failed to output the correct object class.
-
-In terms of speed I would consider either alexnet or resnet, but in terms of accuracy will choose vgg arch.
-------------------------
-
-
-
-
 in_arg =  Namespace(arch='alexnet', dir='uploaded_images/', dogfile='dognames.txt')
 Command Line Arguments:
      dir = uploaded_images/ 
@@ -21,46 +6,46 @@ Command Line Arguments:
 
 Pet Image Label Dictionary has 4 key-value pairs.
 Below are 4 of them:
- 1 key:     uploaded_images/Fox_01.jpg  label:                        fox
- 2 key:   uploaded_images/Chess_01.jpg  label:                      chess
- 3 key: uploaded_images/Otterhound_02.jpg  label:                 otterhound
- 4 key: uploaded_images/Otterhound_01.jpg  label:                 otterhound
+ 1 key:                     Fox_01.jpg  label:                        fox
+ 2 key:                   Chess_01.jpg  label:                      chess
+ 3 key:              Otterhound_02.jpg  label:                 otterhound
+ 4 key:              Otterhound_01.jpg  label:                 otterhound
 
      MATCH:
 
-    uploaded_images/Fox_01.jpg: 
+                    Fox_01.jpg: 
 Real:                        fox   Classifier:         red fox, vulpes vulpes
 
-uploaded_images/Otterhound_02.jpg: 
+             Otterhound_02.jpg: 
 Real:                 otterhound   Classifier:        otterhound, otter hound
 
-uploaded_images/Otterhound_01.jpg: 
+             Otterhound_01.jpg: 
 Real:                 otterhound   Classifier:        otterhound, otter hound
 
  NOT A MATCH:
 
-  uploaded_images/Chess_01.jpg: 
+                  Chess_01.jpg: 
 Real:                      chess   Classifier:                         nipple
 
 # Total Images 4 # Matches: 3 # NOT Matches: 1
 
      MATCH:
 
-    uploaded_images/Fox_01.jpg: 
+                    Fox_01.jpg: 
 Real:                        fox   Classifier:         red fox, vulpes vulpes  
 PetLabelDog: 0  ClassLabelDog: 0
 
-uploaded_images/Otterhound_02.jpg: 
+             Otterhound_02.jpg: 
 Real:                 otterhound   Classifier:        otterhound, otter hound  
 PetLabelDog: 1  ClassLabelDog: 1
 
-uploaded_images/Otterhound_01.jpg: 
+             Otterhound_01.jpg: 
 Real:                 otterhound   Classifier:        otterhound, otter hound  
 PetLabelDog: 1  ClassLabelDog: 1
 
  NOT A MATCH:
 
-  uploaded_images/Chess_01.jpg: 
+                  Chess_01.jpg: 
 Real:                      chess   Classifier:                         nipple  
 PetLabelDog: 0  ClassLabelDog: 0
 
