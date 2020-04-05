@@ -2,7 +2,7 @@
 # mnist multiplercepton
 
 def sigmoid(x):
-    return 1 / (1+np.exp(x))
+    return 1 / (1+np.exp(-x))
 
 batch_size = 64
 
